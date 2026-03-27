@@ -2,17 +2,17 @@
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react'
 
-type TailoredBullets = {
-  experiences: Record<number, string[]>
-  projects: Record<number, string[]>
-  activities: Record<number, string[]>
+export type TailoredBullets = {
+  experiences: Record<string, string[]>
+  projects: Record<string, string[]>
+  activities: Record<string, string[]>
 }
 
-type EphemeralSnapshot = {
+export type EphemeralSnapshot = {
   id: string
   label: string
   createdAt: string
-  data: unknown
+  tailoredBullets: TailoredBullets
 }
 
 type DemoContextType = {
@@ -20,7 +20,7 @@ type DemoContextType = {
   setTailoredBullets: (bullets: TailoredBullets) => void
   clearTailoring: () => void
   snapshots: EphemeralSnapshot[]
-  addSnapshot: (label: string, data: unknown) => void
+  addSnapshot: (label: string, bullets: TailoredBullets) => void
   deleteSnapshot: (id: string) => void
 }
 
@@ -34,14 +34,14 @@ export function DemoProvider({ children }: { children: ReactNode }) {
 
   const clearTailoring = useCallback(() => setTailoredBullets(empty), [])
 
-  const addSnapshot = useCallback((label: string, data: unknown) => {
+  const addSnapshot = useCallback((label: string, bullets: TailoredBullets) => {
     setSnapshots(prev => [
       ...prev,
       {
         id: crypto.randomUUID(),
         label,
         createdAt: new Date().toISOString(),
-        data,
+        tailoredBullets: bullets,
       },
     ])
   }, [])
