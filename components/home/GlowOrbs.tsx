@@ -35,15 +35,15 @@ const GlowOrbs = () => {
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
-      mouseX.set((e.clientX / window.innerWidth - 0.5) * 700);
-      mouseY.set((e.clientY / window.innerHeight - 0.5) * 700);
+      mouseX.set((e.clientX / window.innerWidth - 0.5) * 300);
+      mouseY.set((e.clientY / window.innerHeight - 0.5) * 300);
     };
     window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
   }, [mouseX, mouseY]);
 
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute z-0 inset-0 pointer-events-none">
       <motion.div
         className="absolute"
         style={{

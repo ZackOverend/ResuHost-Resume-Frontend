@@ -7,14 +7,16 @@ import CtaStrip from "@/components/home/CtaStrip";
 import GlowOrbs from "@/components/home/GlowOrbs";
 
 const Home = () => (
-  <div className="text-slate-400 min-h-screen font-sans relative z-1">
+  <div className="text-slate-400 min-h-screen font-sans">
     <GlowOrbs />
-    <Navbar />
-    <Hero />
-    <BulletDemo />
-    <Features />
-    <CtaStrip />
-    <Footer />
+    <div className="relative z-1">
+      <Navbar />
+      <Hero />
+      <BulletDemo />
+      <Features />
+      <CtaStrip />
+      <Footer />
+    </div>
   </div>
 );
 

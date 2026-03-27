@@ -3,7 +3,10 @@
 import { motion } from "framer-motion";
 
 const BulletDemo = () => (
-  <section className="border-t border-b border-indigo-500/10 bg-indigo-500/3 py-14 px-8">
+  <section
+    className="border-t border-b
+   border-indigo-500/10 bg-[#0C0C18] py-14 px-8"
+  >
     <div className="max-w-170 mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
