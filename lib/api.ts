@@ -8,7 +8,7 @@ if (!API_URL || !API_SECRET_KEY) {
 export async function apiRequest(path: string, init?: RequestInit): Promise<Response> {
   const url = `${API_URL}${path}`
   const headers = new Headers(init?.headers)
-  headers.set('X-API-Key', API_SECRET_KEY)
+  headers.set('X-API-Key', API_SECRET_KEY!)
 
   const response = await fetch(url, { ...init, headers })
 
