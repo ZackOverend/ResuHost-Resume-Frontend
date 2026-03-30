@@ -3,10 +3,7 @@
 import { motion } from "framer-motion";
 
 const BulletDemo = () => (
-  <section
-    className="border-t border-b
-   border-indigo-500/10 bg-[#0C0C18] py-14 px-8"
-  >
+  <section className="border-t border-b border-accent/10 bg-tinted py-14 px-8">
     <div className="max-w-170 mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
@@ -15,20 +12,20 @@ const BulletDemo = () => (
         transition={{ duration: 0.5 }}
         className="mb-8"
       >
-        <span className="font-mono text-[0.6rem] tracking-[0.2em] text-slate-700 uppercase">
+        <span className="font-mono text-[0.6rem] tracking-[0.2em] text-ghost uppercase">
           What it does
         </span>
       </motion.div>
 
       <div className="font-mono text-[0.82rem] leading-[1.9]">
         <div className="mb-1">
-          <span className="text-[0.6rem] tracking-[0.15em] text-slate-700 mr-4">
+          <span className="text-[0.6rem] tracking-[0.15em] text-ghost mr-4">
             BEFORE
           </span>
         </div>
 
         <motion.div
-          className="text-slate-600 relative inline-block"
+          className="text-faint relative inline-block"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -36,7 +33,7 @@ const BulletDemo = () => (
           • Responsible for managing team projects and coordinating tasks across
           departments
           <motion.span
-            className="absolute top-1/2 left-0 h-px bg-indigo-400"
+            className="absolute top-1/2 left-0 h-px bg-accent"
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
             viewport={{ once: true }}
@@ -45,13 +42,13 @@ const BulletDemo = () => (
         </motion.div>
 
         <div className="mt-7 mb-1">
-          <span className="text-[0.6rem] tracking-[0.15em] text-indigo-500 mr-4">
+          <span className="text-[0.6rem] tracking-[0.15em] text-accent mr-4">
             AFTER
           </span>
         </div>
 
         <motion.div
-          className="text-slate-200"
+          className="text-secondary"
           initial={{ opacity: 0, y: 4 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -60,7 +57,7 @@ const BulletDemo = () => (
           • Led cross-functional delivery of 4 concurrent initiatives, cutting
           time-to-ship by 38%
           <motion.span
-            className="text-indigo-300 ml-0.5"
+            className="text-accent ml-0.5"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

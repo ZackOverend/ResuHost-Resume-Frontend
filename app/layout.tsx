@@ -27,7 +27,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var d=document.documentElement,t=localStorage.getItem('theme'),m=localStorage.getItem('mode')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(t)d.setAttribute('data-theme',t);d.setAttribute('data-mode',m)}catch(e){}})()` }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

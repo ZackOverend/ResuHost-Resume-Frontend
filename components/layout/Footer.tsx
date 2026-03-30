@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const Footer = () => (
-  <footer className="border-t border-indigo-500/10 px-8 py-6 flex justify-between items-center flex-wrap gap-4">
-    <span className="font-mono text-[0.65rem] text-slate-800">
+  <footer className="border-t border-accent/10 px-8 py-6 flex justify-between items-center flex-wrap gap-4">
+    <span className="font-mono text-[0.65rem] text-whisper">
       © 2026 Zackary Overend
     </span>
     <div className="flex gap-6">
@@ -13,7 +13,7 @@ const Footer = () => (
         <Link
           key={l.href}
           href={l.href}
-          className="nav-link font-mono text-[0.65rem] text-slate-700 no-underline transition-colors duration-150"
+          className="nav-link font-mono text-[0.65rem] text-ghost no-underline transition-colors duration-150"
         >
           {l.label}
         </Link>

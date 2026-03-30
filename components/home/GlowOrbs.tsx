@@ -52,7 +52,7 @@ const GlowOrbs = () => {
           top: "-15vw",
           right: "-10vw",
           background:
-            "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-accent) 15%, transparent) 0%, transparent 70%)",
           x: orb1X,
           y: orb1Y,
         }}
@@ -65,7 +65,7 @@ const GlowOrbs = () => {
           top: "15vw",
           left: "-10vw",
           background:
-            "radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-vivid) 15%, transparent) 0%, transparent 70%)",
           x: orb2X,
           y: orb2Y,
         }}

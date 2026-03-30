@@ -7,7 +7,7 @@ import CtaStrip from "@/components/home/CtaStrip";
 import GlowOrbs from "@/components/home/GlowOrbs";
 
 const Home = () => (
-  <div className="text-slate-400 min-h-screen font-sans">
+  <div className="text-muted min-h-screen font-sans">
     <GlowOrbs />
     <div className="relative z-1">
       <Navbar />

@@ -26,19 +26,19 @@ const Features = () => (
       {FEATURES.map((f, i) => (
         <motion.div
           key={f.num}
-          className="border-t border-indigo-500/12 pt-8 pb-8 pr-8"
+          className="border-t border-accent/12 pt-8 pb-8 pr-8"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.12 }}
         >
-          <div className="font-mono text-[0.6rem] text-indigo-800 tracking-[0.15em] mb-5">
+          <div className="font-mono text-[0.6rem] text-accent tracking-[0.15em] mb-5">
             {f.num}
           </div>
-          <h3 className="text-[1rem] text-slate-200 font-medium mb-2.5 tracking-[-0.01em]">
+          <h3 className="text-[1rem] text-secondary font-medium mb-2.5 tracking-[-0.01em]">
             {f.title}
           </h3>
-          <p className="text-[0.82rem] text-slate-600 leading-[1.75]">
+          <p className="text-[0.82rem] text-faint leading-[1.75]">
             {f.desc}
           </p>
         </motion.div>

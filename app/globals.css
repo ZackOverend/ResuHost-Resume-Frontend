@@ -1,42 +1,109 @@
 @import "tailwindcss";
 
-:root {
-    --background: #09090f;
-    --foreground: #cbd5e1;
-}
+@theme {
+    /* Text scale (most → least visible on dark bg) */
+    --color-primary: #f1f5f9;
+    --color-secondary: #e2e8f0;
+    --color-body: #cbd5e1;
+    --color-muted: #94a3b8;
+    --color-dim: #64748b;
+    --color-faint: #475569;
+    --color-ghost: #334155;
+    --color-whisper: #1e293b;
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+    /* Themed – defaults, overridden per data-theme */
+    --color-base: #09090f;
+    --color-tinted: #0c0c18;
+    --color-surface: #1e1e2e;
+    --color-accent: #6366f1;
+    --color-vivid: #8b5cf6;
+
+    /* Typography */
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
 }
 
+:root {
+    color-scheme: dark;
+}
+
 body {
-    background: var(--background);
-    color: var(--foreground);
+    background: var(--color-base);
+    color: var(--color-muted);
     font-family: var(--font-geist-sans), Arial, sans-serif;
 }
 
 .nav-link:hover {
-    color: #e2e8f0;
+    color: var(--color-secondary);
 }
 
 .btn-secondary:hover {
-    border-color: #4338ca;
-    color: #e2e8f0;
+    border-color: var(--color-accent);
+    color: var(--color-secondary);
 }
 
 .accent-text {
-    background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    background: linear-gradient(
+        135deg,
+        var(--color-accent) 0%,
+        var(--color-vivid) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.glow-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
+/* ── Themes ──────────────────────────────────────────── */
+
+[data-theme="default"] {
+    --color-base: #09090f;
+    --color-tinted: #0c0c18;
+    --color-surface: #1e1e2e;
+    --color-accent: #6366f1;
+    --color-vivid: #8b5cf6;
+}
+
+[data-theme="rose"] {
+    --color-base: #0f0809;
+    --color-tinted: #150b0d;
+    --color-surface: #2d1018;
+    --color-accent: #f43f5e;
+    --color-vivid: #ec4899;
+}
+
+[data-theme="emerald"] {
+    --color-base: #08100c;
+    --color-tinted: #0b150f;
+    --color-surface: #0e2318;
+    --color-accent: #10b981;
+    --color-vivid: #06b6d4;
+}
+
+[data-theme="amber"] {
+    --color-base: #100e08;
+    --color-tinted: #15120a;
+    --color-surface: #261e0a;
+    --color-accent: #f59e0b;
+    --color-vivid: #f97316;
+}
+
+/* ── Light mode ──────────────────────────────────────── */
+/* html[data-mode="light"] has specificity [0,1,1] —     */
+/* always wins over [data-theme] blocks at [0,1,0]        */
+
+html[data-mode="light"] {
+    color-scheme: light;
+
+    --color-base: #fafafa;
+    --color-tinted: #f0f0f5;
+    --color-surface: #dcdce8;
+
+    --color-primary: #0f0f13;
+    --color-secondary: #1c1c24;
+    --color-body: #374151;
+    --color-muted: #4b5563;
+    --color-dim: #6b7280;
+    --color-faint: #9ca3af;
+    --color-ghost: #d1d5db;
+    --color-whisper: #e5e7eb;
 }
