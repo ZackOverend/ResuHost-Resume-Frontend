@@ -21,7 +21,7 @@ const FEATURES = [
 ];
 
 const Features = () => (
-  <section className="px-8 py-[clamp(4rem,8vw,6rem)] max-w-215 mx-auto">
+  <section id="how-it-works" className="px-8 py-[clamp(4rem,8vw,6rem)] max-w-215 mx-auto">
     <div className="grid grid-cols-[repeat(auto-fit,minmax(13.75rem,1fr))]">
       {FEATURES.map((f, i) => (
         <motion.div

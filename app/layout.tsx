@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
@@ -29,10 +30,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var d=document.documentElement,t=localStorage.getItem('theme'),m=localStorage.getItem('mode')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(t)d.setAttribute('data-theme',t);d.setAttribute('data-mode',m)}catch(e){}})()` }} />
-      </head>
       <body className="min-h-full flex flex-col">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: `(function(){try{var d=document.documentElement,t=localStorage.getItem('theme'),m=localStorage.getItem('mode')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(t)d.setAttribute('data-theme',t);d.setAttribute('data-mode',m)}catch(e){}})()` }}
+        />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
